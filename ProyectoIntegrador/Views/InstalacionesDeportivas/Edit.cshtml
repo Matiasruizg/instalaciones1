@@ -1,0 +1,49 @@
+﻿@model ProyectoIntegrador.Models.InstalacionesDeportiva
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>InstalacionesDeportiva</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdInstalacionDeportiva" />
+            <div class="form-group">
+                <label asp-for="NombreInstalacion" class="control-label"></label>
+                <input asp-for="NombreInstalacion" class="form-control" />
+                <span asp-validation-for="NombreInstalacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoCanchaInstalacion" class="control-label"></label>
+                <input asp-for="TipoCanchaInstalacion" class="form-control" />
+                <span asp-validation-for="TipoCanchaInstalacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UbicacionInstalacion" class="control-label"></label>
+                <input asp-for="UbicacionInstalacion" class="form-control" />
+                <span asp-validation-for="UbicacionInstalacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisponibilidadInstalacion" class="control-label"></label>
+                <input asp-for="DisponibilidadInstalacion" class="form-control" />
+                <span asp-validation-for="DisponibilidadInstalacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

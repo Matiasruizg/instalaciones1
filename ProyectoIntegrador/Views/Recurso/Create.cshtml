@@ -1,0 +1,53 @@
+﻿@model ProyectoIntegrador.Models.Recurso
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Recurso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreRecurso" class="control-label"></label>
+                <input asp-for="NombreRecurso" class="form-control" />
+                <span asp-validation-for="NombreRecurso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescripcionRecurso" class="control-label"></label>
+                <input asp-for="DescripcionRecurso" class="form-control" />
+                <span asp-validation-for="DescripcionRecurso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadRecurso" class="control-label"></label>
+                <input asp-for="CantidadRecurso" class="form-control" />
+                <span asp-validation-for="CantidadRecurso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CostoRecurso" class="control-label"></label>
+                <input asp-for="CostoRecurso" class="form-control" />
+                <span asp-validation-for="CostoRecurso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DisponibilidadRecurso" class="control-label"></label>
+                <input asp-for="DisponibilidadRecurso" class="form-control" />
+                <span asp-validation-for="DisponibilidadRecurso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

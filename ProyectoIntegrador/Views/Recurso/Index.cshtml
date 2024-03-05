@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ProyectoIntegrador.Models.Recurso>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreRecurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionRecurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadRecurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoRecurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisponibilidadRecurso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreRecurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionRecurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadRecurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoRecurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisponibilidadRecurso)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdRecurso">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdRecurso">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdRecurso">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
